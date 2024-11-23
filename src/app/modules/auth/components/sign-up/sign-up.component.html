@@ -1,1 +1,57 @@
-<p>sign-up works!</p>
+<div class="main-container">
+  <div class="row inner-container">
+    <div class="col-12 col-lg-5 p-4 d-flex flex-column justify-content-center">
+      <div class="new-account mb-4">Create new account</div>
+      <form class="mb-3">
+        <div class="row mb-3">
+          <div class="col-6">
+            <label for="first-name-input" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="first-name-input"
+              placeholder="John"
+            />
+          </div>
+          <div class="col-6">
+            <label for="last-name-input" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last-name-input"
+              placeholder="Smith"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email-input" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email-input"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password-input" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password-input" />
+        </div>
+        <button class="btn btn-primary w-100">Sign Up</button>
+      </form>
+      <button
+        class="btn w-100 mb-4 d-flex justify-content-center align-items-center google-btn"
+      >
+        <img src="../../../../../assets/icons/google.png" alt="google" />
+        <span>Sign Up with Google</span>
+      </button>
+      <div class="d-flex justify-content-center">
+        Already have an account?<a class="ms-2" routerLink="/auth/login"
+          >Login</a
+        >
+      </div>
+    </div>
+    <div class="col-7 d-none d-lg-flex justify-content-end">
+      <img src="../../../../../assets/images/e-learning.svg" alt="e-learning" />
+    </div>
+  </div>
+</div>
