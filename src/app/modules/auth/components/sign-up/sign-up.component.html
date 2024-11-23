@@ -12,41 +12,87 @@
             <label for="first-name-input" class="form-label">First Name</label>
             <input
               type="text"
-              class="form-control"
+              class="form-control mb-1"
+              [ngClass]="{
+                'is-valid': firstName?.valid,
+                'is-invalid': firstName?.invalid && firstName?.touched
+              }"
               id="first-name-input"
               placeholder="John"
               formControlName="firstName"
             />
+            <span
+              *ngIf="firstName?.invalid && firstName?.touched"
+              class="text-danger"
+              >This field is required</span
+            >
           </div>
           <div class="col-6">
             <label for="last-name-input" class="form-label">Last Name</label>
             <input
               type="text"
-              class="form-control"
+              class="form-control mb-1"
+              [ngClass]="{
+                'is-valid': lastName?.valid,
+                'is-invalid': lastName?.invalid && lastName?.touched
+              }"
               id="last-name-input"
               placeholder="Smith"
               formControlName="lastName"
             />
+            <span
+              *ngIf="lastName?.invalid && lastName?.touched"
+              class="text-danger"
+              >This field is required</span
+            >
           </div>
         </div>
         <div class="mb-3">
           <label for="email-input" class="form-label">Email address</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control mb-1"
+            [ngClass]="{
+              'is-valid': email?.valid,
+              'is-invalid': email?.invalid && email?.touched
+            }"
             id="email-input"
             placeholder="name@example.com"
             formControlName="email"
           />
+          <span
+            *ngIf="email?.hasError('required') && email?.touched"
+            class="text-danger"
+            >This field is required</span
+          >
+          <span
+            *ngIf="email?.hasError('email') && email?.touched"
+            class="text-danger"
+            >Invalid email syntax</span
+          >
         </div>
         <div class="mb-3">
           <label for="password-input" class="form-label">Password</label>
           <input
             type="password"
-            class="form-control"
+            class="form-control mb-1"
+            [ngClass]="{
+              'is-valid': password?.valid,
+              'is-invalid': password?.invalid && password?.touched
+            }"
             id="password-input"
             formControlName="password"
           />
+          <span
+            *ngIf="password?.hasError('required') && password?.touched"
+            class="text-danger"
+            >This field is required</span
+          >
+          <span
+            *ngIf="password?.hasError('minlength') && password?.touched"
+            class="text-danger"
+            >Password should be at least 8 characters</span
+          >
         </div>
         <button class="btn btn-primary w-100">Sign Up</button>
       </form>

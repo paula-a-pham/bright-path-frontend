@@ -23,7 +23,22 @@ export class SignUpComponent {
     });
   }
 
+  get firstName() {
+    return this.form.get('firstName');
+  }
+  get lastName() {
+    return this.form.get('lastName');
+  }
+  get email() {
+    return this.form.get('email');
+  }
+  get password() {
+    return this.form.get('password');
+  }
+
   createAccountWithEmailAndPassword(): void {
-    const user = this.form.value as IUser;
+    if (this.form.valid) {
+      const user = this.form.value as IUser;
+    }
   }
 }
