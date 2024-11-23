@@ -8,7 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { CoreModule } from './core/core.module';
-import { firebaseConfig } from './core/constants/firebase-config';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +20,7 @@ import { firebaseConfig } from './core/constants/firebase-config';
     CoreModule,
   ],
   providers: [
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
   bootstrap: [AppComponent],
