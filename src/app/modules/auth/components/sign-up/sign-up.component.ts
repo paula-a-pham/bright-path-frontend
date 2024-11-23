@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../../../../shared/models/iuser';
 import { AuthService } from '../../../../core/services/auth/auth.service';
 import { AuthError } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,6 +15,7 @@ export class SignUpComponent {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private authService: AuthService
   ) {
     this.initializeSignUpForm();
@@ -45,7 +47,9 @@ export class SignUpComponent {
     if (this.form.valid) {
       const user = this.form.value as IUser;
       this.authService.createAccountWithEmailAndPassword(user).subscribe({
-        next: (userCredential) => {},
+        next: (userCredential) => {
+          this.router.navigate(['/auth/login'], { replaceUrl: true });
+        },
         error: (error: AuthError) => {
           const e = error.code.replace('auth/', '');
           console.error(e);
