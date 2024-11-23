@@ -1,1 +1,46 @@
-<p>login works!</p>
+<div class="main-container">
+  <div class="row">
+    <div class="col-12 col-lg-5 p-4 d-flex flex-column justify-content-center">
+      <div class="welcome-back mb-4">Welcome back!</div>
+      <form class="mb-3">
+        <div class="mb-3">
+          <label for="email-input" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email-input"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password-input" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password-input" />
+        </div>
+        <div class="mb-3 d-flex justify-content-between">
+          <div class="form-check">
+            <label class="form-check-label" for="remember-me">
+              Remember Me
+            </label>
+            <input type="checkbox" class="form-check-input" id="remember-me" />
+          </div>
+          <a>Forgot password?</a>
+        </div>
+        <button class="btn btn-primary w-100">Login</button>
+      </form>
+      <button
+        class="btn w-100 mb-4 d-flex justify-content-center align-items-center google-btn"
+      >
+        <img src="../../../../../assets/icons/google.png" alt="google" />
+        <span>Login with Google</span>
+      </button>
+      <div class="d-flex justify-content-center">
+        Don't have an account?<a class="ms-2" routerLink="/auth/sign-up"
+          >Create one</a
+        >
+      </div>
+    </div>
+    <div class="col-7 d-none d-lg-flex justify-content-end">
+      <img src="../../../../../assets/images/e-learning.svg" alt="e-learning" />
+    </div>
+  </div>
+</div>
